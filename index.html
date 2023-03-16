@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Game of The Mafia | Role Playing Game</title>
+    <link rel="stylesheet" href="/styles/styles.css">
 </head>
+
 <body>
     <header></header>
-    <main></main>
+    <main>
+        <h1>THE GAME OF THE MAFIA</h1>
+        <p>Este juego es un juego casero que se juega con minimo 6 personas de manera presencial, esta pagina es para
+            facilitar el uso de una parsona ajena para el control del juego.</p>
+        <h3>VALORES DE LAS CARTAS</h3>
+        <ol>
+            <li>12 = MAFIA</li>
+            <li>1 de espadas = POLICIA</li>
+            <li>7 de espadas = DOCTOR</li>
+            <li>7 de basto = LA PUTA</li>
+            <li>3 = CARNICERO</li>
+            <li>4 = PUEBLO</li>
+        </ol>
+        <h3>PARTICIPANTES</h3>
+        <p id="jugadores"></p>
+        <p>Se reparten las cartas y se coloca (EN EL MISMO ORDEN QUE ESTAN EN PANTALLA) el numero de carta que le corresponde a cada uno sin que nadie vea.</p>
+        
+        <button onclick="actualizarTiempo()">INICIAR TEMPORIZADOR</button>
+        <p>(no pausar todavia nose como)</p>
+        <div class="cont-temporizador">
+            <div class="bloque">
+                <div class="segundos" id="segundos">--</div>
+                <p>SEGUNDOS</p>
+            </div>
+        </div>
+
+    </main>
     <footer></footer>
+    <script src="/apps/app.js"></script>
 </body>
+
 </html>
