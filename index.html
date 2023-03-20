@@ -9,25 +9,25 @@
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
 
-<body>
+<body id="body">
     <header></header>
     <main>
         <h1>THE GAME OF THE MAFIA</h1>
         <p>Este juego es un juego casero que se juega con minimo 6 personas de manera presencial, esta pagina es para
             facilitar el uso de una parsona ajena para el control del juego.</p>
-        <h3>VALORES DE LAS CARTAS</h3>
+        <h3 id="inicio">VALORES DE LAS CARTAS</h3>
         <ol>
-            <li>12 = MAFIA</li>
-            <li>1 de espadas = POLICIA</li>
-            <li>7 de espadas = DOCTOR</li>
-            <li>7 de basto = LA PUTA</li>
-            <li>3 = CARNICERO</li>
-            <li>4 = PUEBLO</li>
+            <li><a href="#Mafia">12 = MAFIA</a></li>
+            <li><a href="">1 de espadas = POLICIA</a></li>
+            <li><a href="">7 de espadas = DOCTOR</a></li>
+            <li><a href="">6 de basto = LA PUTA</a></li>
+            <li><a href="">3 = CARNICERO</a></li>
+            <li><a href="">4 = PUEBLO</a></li>
         </ol>
-        <h3>PARTICIPANTES</h3>
-        <p id="jugadores"></p>
-        <p>Se reparten las cartas y se coloca (EN EL MISMO ORDEN QUE ESTAN EN PANTALLA) el numero de carta que le corresponde a cada uno sin que nadie vea.</p>
-        
+        <h5>Cantidad de participantes:</h5> <button onclick="ingresarCantidad()" class="button cantidad">Click aca para ingresar cantidad</button>
+        <p id="mensaje"></p>
+        <h5>Ingresa los nombres de los jugadores</h5>
+        <button class="button name"onclick="ingresarJugadores(cantidad)">Click aca para ingresar el numero de jugadores</button>
         <button onclick="actualizarTiempo()">INICIAR TEMPORIZADOR</button>
         <p>(no pausar todavia nose como, solo tocar una vez)</p>
         <div class="cont-temporizador">
@@ -36,7 +36,14 @@
                 <p>SEGUNDOS</p>
             </div>
         </div>
-
+        <h3>PARTICIPANTES</h3>
+        <p id="jugadores"></p>
+        <p>Se reparten las cartas y se coloca (EN EL MISMO ORDEN QUE ESTAN EN PANTALLA) el numero de carta que le
+            corresponde a cada uno sin que nadie vea.</p>
+        <button onclick="ingresarCarta()">Ingresar Cartas</button>
+        <h3>SE DUERMEN TODOS</h3>
+        <h4 id="Mafia">SE LEVANTA LA MAFIA</h4>
+        <a href="#inicio">Volver a inicio</a>
     </main>
     <footer></footer>
     <script src="/apps/app.js"></script>
