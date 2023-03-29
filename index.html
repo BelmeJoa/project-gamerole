@@ -12,10 +12,10 @@
 <body id="body">
     <header></header>
     <main>
-        <h1>THE GAME OF THE MAFIA</h1>
+        <h1 id="inicio">THE GAME OF THE MAFIA</h1>
         <p>Este juego es un juego casero que se juega con minimo 6 personas de manera presencial, esta pagina es para
             facilitar el uso de una parsona ajena para el control del juego.</p>
-        <h3 id="inicio">VALORES DE LAS CARTAS</h3>
+        <h3 >VALORES DE LAS CARTAS</h3>
         <ol>
             <li><a href="#Mafia">12 = MAFIA</a></li>
             <li><a href="">1 de espadas = POLICIA</a></li>
@@ -28,8 +28,8 @@
         <p id="mensaje"></p>
         <h5>Ingresa los nombres de los jugadores</h5>
         <button class="button name"onclick="ingresarJugadores(cantidad)">Click aca para ingresar el numero de jugadores</button>
-        <button onclick="actualizarTiempo()">INICIAR TEMPORIZADOR</button>
-        <p>(no pausar todavia nose como, solo tocar una vez)</p>
+        <button onclick="actualizarTiempo()">INICIAR TEMPORIZADOR(no pausar todavia nose como, solo tocar una vez y esperar aq q termine para tocar de nuevo)</button>
+        <p id="alertatiempo"></p>
         <div class="cont-temporizador">
             <div class="bloque">
                 <div class="segundos" id="segundos">--</div>
@@ -38,11 +38,13 @@
         </div>
         <h3>PARTICIPANTES</h3>
         <p id="jugadores"></p>
-        <p>Se reparten las cartas y se coloca (EN EL MISMO ORDEN QUE ESTAN EN PANTALLA) el numero de carta que le
+        <!-- <p>Se reparten las cartas y se coloca (EN EL MISMO ORDEN QUE ESTAN EN PANTALLA) el numero de carta que le
             corresponde a cada uno sin que nadie vea.</p>
-        <button onclick="ingresarCarta()">Ingresar Cartas</button>
-        <h3>SE DUERMEN TODOS</h3>
-        <h4 id="Mafia">SE LEVANTA LA MAFIA</h4>
+        <button onclick="ingresarCarta()">Ingresar Cartas</button> -->
+        <h4 id="Mafia">MAFIA</h4>
+        <button type="submit" onclick="cantidadMafias()">click aca para especificar cuantas mafias hay</button>
+        <button type="submit" onclick="ronda()">click aca para iniciar una ronda</button>
+        <p class="ronda" id="ronda"></p>
         <a href="#inicio">Volver a inicio</a>
     </main>
     <footer></footer>
