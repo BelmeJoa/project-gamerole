@@ -35,30 +35,32 @@ let ingresarJugadores = (cantidad) => {
 // }
 
 const ronda = () => {
-    let numeroMafia = prompt(`Ingresa la cantidad de mafias con vida`)
-    let mafia = prompt('SE LEVANTA LA MAFIA. A quien decide matar?').toLocaleLowerCase()
-    let doctor = prompt('SE LEVANTA EL DOCTOR. A quien decide curar?').toLocaleLowerCase()
-    let puta = prompt('SE LEVANTA LA PUTA. A quien decide anular?').toLocaleLowerCase()
-    let carnicero = prompt('SE LEVANTA EL CARNICERO. A quien deciden callar?').toLocaleLowerCase()
+    let mafia = prompt("SE LEVANTA LA MAFIA. Quienes son?(Si son mas de dos ingresar juntos separados por un guion siempre y cuando esten con vida)").toLocaleLowerCase()
+    let muere = prompt('A quien decide matar?').toLocaleLowerCase()
+    let policia = prompt('SE LEVANTA EL POLICIA. Por quien decide preguntar?').toLocaleLowerCase()
+    let doctor = prompt("SE LEVANTA EL DOCTOR. Quien es?").toLocaleLowerCase()
+    let curado = prompt('A quien decide curar?').toLocaleLowerCase()
+    let puta = prompt("SE LEVANTA lA PUTA. Quien es?").toLocaleLowerCase()
+    let anulado = prompt('A quien decide anular?').toLocaleLowerCase()
+    let carnicero = prompt("SE LEVANTA EL CARNICERO. Quien es?").toLocaleLowerCase()
+    let callado = prompt('A quien deciden callar?').toLocaleLowerCase()
     let situacion
-    if(mafia==doctor && doctor==puta){
-        situacion = `Se muere ${mafia} y se queda callado esta ronda ${carnicero}`
-    }else if(mafia==doctor && doctor!=puta && puta!=carnicero){
-        situacion= `No se muere nadie y se queda callado esta ronda ${carnicero}`
-    }else if(mafia==puta && numeroMafia>=2){
-        situacion = `Se muere ${mafia} y se queda callado esta ronda ${carnicero}`
-    } else if(mafia==puta && numeroMafia==1){
-        situacion= `No se muere nadie y se queda callado esta ronda ${carnicero}`
-    } else if(mafia==carnicero && puta==carnicero){
-        situacion= `Se muere ${mafia}`
-    } else if(puta==carnicero && mafia!=carnicero){
-        situacion= `Se muere ${mafia}`
-    } else if(mafia==doctor && puta==carnicero){
+    if(muere==curado && doctor==anulado){
+        situacion = `Se muere ${muere} y se queda callado esta ronda ${callado}`
+    }else if(muere==curado && doctor!=anulado && anulado!=carnicero){
+        situacion= `No se muere nadie y se queda callado esta ronda ${callado}`
+    }else if(mafia==anulado){
+        situacion= `No se muere nadie y se queda callado esta ronda ${callado}`
+    } else if(muere==carnicero && anulado==carnicero){
+        situacion= `Se muere ${muere}`
+    } else if(anulado==carnicero && muere!=carnicero){
+        situacion= `Se muere ${muere}`
+    } else if(muere==curado && anulado==carnicero){
         situacion=`No se muere nadie y pueden hablar todos esta ronda`
-    } else if(mafia==carnicero && puta!=carnicero){
-        situacion = `Se muere ${mafia} y se queda callado esta ronda ${carnicero}`
+    } else if(muere==carnicero && anulado!=carnicero){
+        situacion = `Se muere ${muere} y se queda callado esta ronda ${callado}`
     }else{
-        situacion = `Se muere ${mafia} y se queda callado esta ronda ${carnicero}`
+        situacion = `Se muere ${muere} y se queda callado esta ronda ${callado}`
     }
     document.getElementById("ronda").innerHTML = situacion
 }
