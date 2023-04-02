@@ -1,5 +1,4 @@
 //Saludo a diosito
-alert("Hola buenas! Con esta app la idea es ayudarte con el juego y que no te explote la calabaza asi que lets go!")
 //Cantidad
 let nombres = []
 let cantidad
@@ -34,16 +33,17 @@ let ingresarJugadores = (cantidad) => {
 //     console.log(cartas)
 // }
 
-const ronda = () => {
-    let mafia = prompt("SE LEVANTA LA MAFIA. Quienes son?(Si son mas de dos ingresar juntos separados por un guion siempre y cuando esten con vida)").toLocaleLowerCase()
-    let muere = prompt('A quien decide matar?').toLocaleLowerCase()
-    let policia = prompt('SE LEVANTA EL POLICIA. Por quien decide preguntar?').toLocaleLowerCase()
-    let doctor = prompt("SE LEVANTA EL DOCTOR. Quien es?").toLocaleLowerCase()
-    let curado = prompt('A quien decide curar?').toLocaleLowerCase()
-    let puta = prompt("SE LEVANTA lA PUTA. Quien es?").toLocaleLowerCase()
-    let anulado = prompt('A quien decide anular?').toLocaleLowerCase()
-    let carnicero = prompt("SE LEVANTA EL CARNICERO. Quien es?").toLocaleLowerCase()
-    let callado = prompt('A quien deciden callar?').toLocaleLowerCase()
+const ronda = (e) => {
+    e.preventDefault()
+    let mafia = document.querySelector("#mafia").value
+    let muere = document.querySelector("#muerto").value
+    let policia = document.querySelector("#policia").value
+    let doctor = document.querySelector("#doctor").value
+    let curado = document.querySelector("#curado").value
+    let puta =document.querySelector("#puta").value
+    let anulado =document.querySelector("#anulado").value
+    let carnicero = document.querySelector("#carnicero").value
+    let callado = document.querySelector("#callado").value
     let situacion
     if(muere==curado && doctor==anulado){
         situacion = `Se muere ${muere} y se queda callado esta ronda ${callado}`
@@ -64,6 +64,8 @@ const ronda = () => {
     }
     document.getElementById("ronda").innerHTML = situacion
 }
+let formu = document.querySelector("#formulario");
+formu.addEventListener("submit", ronda)
 //TEMPORIZADOR
 let segundos = 5;
 const actualizarTiempo=()=>{
