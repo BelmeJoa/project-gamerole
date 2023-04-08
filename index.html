@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +9,11 @@
 </head>
 
 <body id="body">
-    <header></header>
+    <header><h1 id="inicio">THE GAME OF THE MAFIA</h1></header>
     <main>
-        <h1 id="inicio">THE GAME OF THE MAFIA</h1>
         <p>Este juego es un juego casero que se juega con minimo 6 personas de manera presencial, esta pagina es para
             facilitar el uso de una parsona ajena para el control del juego.</p>
+            <a href="https://es.wikihow.com/jugar-mafia" target="_blank">Reglas del juego</a>
         <h3 >VALORES DE LAS CARTAS</h3>
         <ol>
             <li><a href="#Mafia">12 = MAFIA</a></li>
@@ -24,11 +23,12 @@
             <li><a href="">3 = CARNICERO</a></li>
             <li><a href="">4 = PUEBLO</a></li>
         </ol>
-        <h5>Cantidad de participantes:</h5> <button onclick="ingresarCantidad()" class="button cantidad">Click aca para ingresar cantidad</button>
+        <h5>Cantidad de participantes:</h5>
+        <button onclick="ingresarCantidad()" class="button cantidad">Click aca para ingresar cantidad</button>
         <p id="mensaje"></p>
         <h5>Ingresa los nombres de los jugadores</h5>
-        <button class="button name"onclick="ingresarJugadores(cantidad)">Click aca para ingresar el numero de jugadores</button>
-        <button onclick="actualizarTiempo()">INICIAR TEMPORIZADOR(no pausar todavia nose como, solo tocar una vez y esperar aq q termine para tocar de nuevo)</button>
+        <button class="button name" onclick="ingresarJugadores(cantidad)">Ingresa los nombres de los jugadores</button>
+        <button onclick="actualizarTiempo()" class="button temp">INICIAR TEMPORIZADOR(no pausar todavia nose como, solo tocar una vez y esperar aq q termine para tocar de nuevo)</button>
         <p id="alertatiempo"></p>
         <div class="cont-temporizador">
             <div class="bloque">
@@ -37,20 +37,23 @@
             </div>
         </div>
         <h3>PARTICIPANTES</h3>
-        <p id="jugadores"></p>
+        <p id="jugadores">jugadores >>></p>
         <h4 id="Mafia">RONDAS</h4>
-        <p class="ronda" id="ronda"></p>
-        <form action="" method="get" name="formulario" id="formulario">
-            <input type="text" class="mafia" id="mafia" placeholder="Nombre de mafia">
-            <input type="text" class="muerto" id="muerto" placeholder="Nombre de quien quiere matar">
-            <input type="text" class="policia" id="policia" placeholder="Nombre del policia">
-            <input type="text" class="doctor" id="doctor" placeholder="Nombre del doctor">
-            <input type="text" class="curado" id="curado" placeholder="Nombre de quien quiera curar">
-            <input type="text" class="puta" id="puta" placeholder="Nombre de la puta">
-            <input type="text" class="anulado" id="anulado" placeholder="Nombre de quien quiera anular">
-            <input type="text" class="carnicero" id="carnicero" placeholder="Nombre del carnicero">
-            <input type="text" class="callado" id="callado" placeholder="Nombre del callado">
-            <button type="submit" class="btn">Enviar</button>
+        
+        <form action="" method="get" name="formulario" id="formulario">            
+            <section class="section mafia"><input type="text" class="mafia" id="mafia" placeholder="Nombre de mafia">
+            <input type="text" class="mafia" id="muerto" placeholder="Nombre de quien quiere matar"></section>
+            <section class="section poli"><input type="text" class="policia" id="policia" placeholder="Nombre del policia"></section>
+            <section class="section doctor"><input type="text" class="doctor" id="doctor" placeholder="Nombre del doctor">
+            <input type="text" class="doctor" id="curado" placeholder="Nombre de quien quiera curar"></section>
+            <section class="section puta"><input type="text" class="puta" id="puta" placeholder="Nombre de la puta">
+            <input type="text" class="puta" id="anulado" placeholder="Nombre de quien quiera anular"></section>
+            <section class="section carnicero"><input type="text" class="carnicero" id="carnicero" placeholder="Nombre del carnicero">
+            <input type="text" class="carnicero" id="callado" placeholder="Nombre del callado"></section>
+            <section class="section btn">
+                <button type="submit" class="btn">Enviar</button>
+                <p class="ronda" id="ronda"></p>
+            </section>
         </form>
         <a href="#inicio">Volver a inicio</a>
     </main>

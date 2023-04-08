@@ -3,10 +3,27 @@
     padding: 0;
     box-sizing: border-box;
 }
+header{
+    background-color: red;
+    min-height: 10vh;
+}
+body{
+    background-color: black;
+    color: #ffffff;
+}
 ol {
     display: block;
     list-style: none;
     text-align: center;
+}
+.section {
+    min-height: 40vh;
+    background-color: rgb(255, 163, 127);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 5%;
 }
 .cont-temporizador{
     display: flex;

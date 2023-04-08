@@ -18,7 +18,7 @@ let ingresarJugadores = (cantidad) => {
             nombres.splice((i-1),1,nombre)
             console.log(nombres)
         } for (let i = 1; i <= cantidad; i++) {
-        document.getElementById("jugadores").innerHTML += `   ${(i)}) ${nombres[i-1]}   `
+        document.getElementById("jugadores").innerHTML += `     ${(i)}) ${nombres[i-1]}      `
     }
 }
   //add listado en el html
@@ -32,13 +32,12 @@ let ingresarJugadores = (cantidad) => {
 //         cartas.push(carta)
 //     console.log(cartas)
 // }
-
-const ronda = (e) => {
-    e.preventDefault()
-    let mafia = document.querySelector("#mafia").value
+const ronda = (e) => { 
+    e.preventDefault()    
+    let mafia = document.querySelector("#mafia").value 
     let muere = document.querySelector("#muerto").value
     let policia = document.querySelector("#policia").value
-    let doctor = document.querySelector("#doctor").value
+    let doctor = document.querySelector("#doctor").value 
     let curado = document.querySelector("#curado").value
     let puta =document.querySelector("#puta").value
     let anulado =document.querySelector("#anulado").value
@@ -64,14 +63,15 @@ const ronda = (e) => {
     }
     document.getElementById("ronda").innerHTML = situacion
 }
-let formu = document.querySelector("#formulario");
-formu.addEventListener("submit", ronda)
+let rond = document.querySelector("#formulario");
+rond.addEventListener("submit", ronda)
 //TEMPORIZADOR
-let segundos = 5;
+let segundos = 120;
 const actualizarTiempo=()=>{
 	document.getElementById("segundos").innerHTML = segundos;
 	if(segundos==0){
         alert("El tiempo se acabo..");
+        window.navigator.vibrate([1000]);
         segundos=120
 	}else{
 		segundos--;
