@@ -7,6 +7,17 @@ header{
     background-color: red;
     min-height: 10vh;
 }
+h1{
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    padding: 1%;
+}
+.p-init {
+    background-color: rgb(212, 151, 128);
+    margin: 2%;
+    padding: 20px;
+    text-align: center;
+}
 body{
     background-color: black;
     color: #ffffff;
@@ -17,13 +28,18 @@ ol {
     text-align: center;
 }
 .section {
-    min-height: 40vh;
-    background-color: rgb(255, 163, 127);
+    min-height: 50vh;
+    background-color: rgb(102, 101, 100);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: 5%;
+}
+input{
+    padding: 5px;
+    border-radius: 10%;
+    background-color: #e0dede;
 }
 .cont-temporizador{
     display: flex;
