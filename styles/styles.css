@@ -3,24 +3,31 @@
     padding: 0;
     box-sizing: border-box;
 }
+a{
+    text-decoration: none;}
 header{
-    background-color: red;
-    min-height: 10vh;
+    background-image: url(/assets/headedback.jfif);
+    background-size:100% 100%;
+    min-height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-h1{
+h1,h3,h5,h4{
     font-family: 'Cinzel', serif;
-    text-align: center;
-    padding: 1%;
+}
+h3,h5,h4{
+    font-size:medium;
 }
 .p-init {
-    background-color: rgb(212, 151, 128);
+    background-color: rgb(138, 80, 59);
     margin: 2%;
     padding: 20px;
     text-align: center;
 }
 body{
-    background-color: black;
-    color: #ffffff;
+    background-color: rgb(68, 67, 67);
+    color: #d6d3d3;
 }
 ol {
     display: block;
@@ -28,15 +35,15 @@ ol {
     text-align: center;
 }
 .section {
-    min-height: 50vh;
+    min-height: 60vh;
     background-color: rgb(102, 101, 100);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 5%;
+    margin:20px 200px;
 }
-input{
+select{
     padding: 5px;
     border-radius: 10%;
     background-color: #e0dede;
@@ -65,4 +72,8 @@ input{
     height: 70px;
     margin-bottom: 10px;
     border-radius: 5px;
+}
+footer{
+    background-color: black;
+    min-height: 10vh;
 }

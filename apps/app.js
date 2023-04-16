@@ -1,16 +1,16 @@
 //Saludo a diosito
 //Cantidad
 let nombres = []
-let cantidad
 const ingresarCantidad = ()=>{
-    cantidad = prompt("Ingresa la cantidad de jugadores")
+    // cantidad = prompt("Ingresa la cantidad de jugadores")
+    let cantidad = document.querySelector("#cantidad").value
     if (cantidad <= 5 || cantidad=="" ) {
-        document.getElementById("mensaje").innerHTML= "Necesitas al menos 6 personas para poder jugar. Ingresa la cantidad nuevamente"
+        alert("Necesitas al menos 6 personas para poder jugar. Ingresa la cantidad nuevamente")
     }
     nombres.length = cantidad 
-    return cantidad
+    return nombres.length
 }
-console.log(cantidad)
+console.log(nombres.length)
 let ingresarJugadores = (cantidad) => {
     if(cantidad>=6){
         for (let i = 1; i <= cantidad; i++) {
@@ -19,11 +19,40 @@ let ingresarJugadores = (cantidad) => {
             console.log(nombres)
         } for (let i = 1; i <= cantidad; i++) {
         document.getElementById("jugadores").innerHTML += `     ${(i)}) ${nombres[i-1]}      `
+        }
+        
+    }select();
+}
+let reset =()=>{
+    window.location.reload()
+}
+let $select= document.getElementById("select-mafia")
+let select = ()=>{
+    options()
+    $select= document.getElementById("select-muerto")
+    options()
+    $select= document.getElementById("select-policia")
+    options()
+    $select= document.getElementById("select-doctor")
+    options()
+    $select= document.getElementById("select-curado")
+    options()
+    $select= document.getElementById("select-puta")
+    options()
+    $select= document.getElementById("select-anulado")
+    options()
+    $select= document.getElementById("select-carnicero")
+    options()
+    $select= document.getElementById("select-callado")
+    options()
+}
+let options = ()=>{
+
+    for (let i=1; i <= nombres.length; i++){
+        $select.innerHTML+=`
+        <option value="value${(i)}">${nombres[i-1]}</option>`
     }
-}
-  //add listado en el html
-     
-}
+} 
 //nro de carta de cada
 // let cartas= []
 // let ingresarCarta=()=>{
@@ -34,15 +63,15 @@ let ingresarJugadores = (cantidad) => {
 // }
 const ronda = (e) => { 
     e.preventDefault()    
-    let mafia = document.querySelector("#mafia").value 
-    let muere = document.querySelector("#muerto").value
-    let policia = document.querySelector("#policia").value
-    let doctor = document.querySelector("#doctor").value 
-    let curado = document.querySelector("#curado").value
-    let puta =document.querySelector("#puta").value
-    let anulado =document.querySelector("#anulado").value
-    let carnicero = document.querySelector("#carnicero").value
-    let callado = document.querySelector("#callado").value
+    let mafia = document.getElementsByName("mafia").value 
+    let muere = document.getElementsByName("muerto").value
+    let policia = document.getElementsByName("policia").value
+    let doctor = document.getElementsByName("doctor").value 
+    let curado = document.getElementsByName("curado").value
+    let puta =document.getElementsByName("puta").value
+    let anulado =document.getElementsByName("anulado").value
+    let carnicero = document.getElementsByName("carnicero").value
+    let callado = document.getElementsByName("callado").value
     let situacion
     if(muere==curado && doctor==anulado){
         situacion = `Se muere ${muere} y se queda callado esta ronda ${callado}`
