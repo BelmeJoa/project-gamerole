@@ -21,13 +21,15 @@ let ingresarJugadores = (cantidad) => {
         document.getElementById("jugadores").innerHTML += `     ${(i)}) ${nombres[i-1]}      `
         }
         
-    }select();
+    }else{alert("Ingresa la cantidad de jugadores")}
+    select();
 }
 let reset =()=>{
     window.location.reload()
 }
-let $select= document.getElementById("select-mafia")
+let $select
 let select = ()=>{
+    $select= document.getElementById("select-mafia")
     options()
     $select= document.getElementById("select-muerto")
     options()
@@ -50,7 +52,7 @@ let options = ()=>{
 
     for (let i=1; i <= nombres.length; i++){
         $select.innerHTML+=`
-        <option value="value${(i)}">${nombres[i-1]}</option>`
+        <option value="${nombres[i-1]}">${nombres[i-1]}</option>`
     }
 } 
 //nro de carta de cada
@@ -63,15 +65,15 @@ let options = ()=>{
 // }
 const ronda = (e) => { 
     e.preventDefault()    
-    let mafia = document.getElementsByName("mafia").value 
-    let muere = document.getElementsByName("muerto").value
-    let policia = document.getElementsByName("policia").value
-    let doctor = document.getElementsByName("doctor").value 
-    let curado = document.getElementsByName("curado").value
-    let puta =document.getElementsByName("puta").value
-    let anulado =document.getElementsByName("anulado").value
-    let carnicero = document.getElementsByName("carnicero").value
-    let callado = document.getElementsByName("callado").value
+    let mafia = document.querySelector("#select-mafia").value 
+    let muere = document.querySelector("#select-muerto").value
+    let policia = document.querySelector("#select-policia").value
+    let doctor = document.querySelector("#select-doctor").value 
+    let curado = document.querySelector("#select-curado").value
+    let puta =document.querySelector("#select-puta").value
+    let anulado =document.querySelector("#select-anulado").value
+    let carnicero = document.querySelector("#select-carnicero").value
+    let callado = document.querySelector("#select-callado").value
     let situacion
     if(muere==curado && doctor==anulado){
         situacion = `Se muere ${muere} y se queda callado esta ronda ${callado}`
